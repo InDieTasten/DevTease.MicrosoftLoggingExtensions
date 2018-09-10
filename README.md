@@ -6,8 +6,9 @@ Microsoft Logging extensions
 Consisting of:
 
 - ILogger<>
-- ILoggerProvider<>
-- ILoggingBuilder<>
+- ILoggerProvider
+- ILoggerFactory
+- ILoggingBuilder
 
 Useful for
 
@@ -41,8 +42,9 @@ Snippet for Console logger to show scopes
 
 Using the ILogger.BeginScope in the HomeController.Contact action
 
-## 6. From here on
+## 6. Where to continue
 
 - Structered Logging
 - Implement custom providers
 - [LoggerMessage pattern](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/loggermessage?view=aspnetcore-2.1)
+- EventIds
