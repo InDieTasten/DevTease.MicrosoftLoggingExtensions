@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MicrosoftLoggerExtensions.Models;
+using System;
+using System.Diagnostics;
 
 namespace MicrosoftLoggerExtensions.Controllers
 {
@@ -36,16 +33,16 @@ namespace MicrosoftLoggerExtensions.Controllers
         {
             ViewData["Message"] = "Your contact page.";
 
-            //using (_logger.BeginScope("TransactionNumber:{TransactionNumber}", Guid.NewGuid()))
-            //{
-            //    _logger.LogInformation("Start of transaction");
+            using (_logger.BeginScope("TransactionNumber:{TransactionNumber}", Guid.NewGuid()))
+            {
+                _logger.LogInformation("Start of transaction");
 
-            //    _logger.LogWarning("Something went kinda wrong");
+                _logger.LogWarning("Something went kinda wrong");
 
-            //    _logger.LogError("Something went really wrong");
+                _logger.LogError("Something went really wrong");
 
-            //    _logger.LogCritical("Everything went down hill really quickly. HALP!");
-            //}
+                _logger.LogCritical("Everything went down hill really quickly. HALP!");
+            }
             return View();
         }
 
